@@ -1,0 +1,49 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+<html>
+<head>
+
+    <title>Modifier Blague</title>
+</head>
+<body>
+<div class="main-panel">
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" data-background-color="purple">
+                        <h4 class="title">Espace Administration des loisirs</h4>
+                        <p class="category">Modifier une blague</p>
+                    </div>
+                    <div class="card-content table-responsive">
+
+                    {{ form_start(f) }}
+        <label>Titre</label><br>
+        {{ form_widget(f.titre) }}<br>
+        <label>Description</label><br>
+        {{ form_widget(f.description) }}<br>
+
+        <br>{{ form_widget(f.Accepter) }}<br>
+        {{ form_end(f) }}<br>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+</div>
+
+
+
+</body>
+</html>
+{% endblock %}

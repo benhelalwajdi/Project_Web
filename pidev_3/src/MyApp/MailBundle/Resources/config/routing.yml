@@ -1,0 +1,10 @@
+my_app_mail_homepage:
+    path:     /mailform
+    defaults: { _controller: MyAppMailBundle:Mail:index1 }
+
+my_app_mail_accuse:
+    path:     /success
+    defaults: { _controller: MyAppMailBundle:Mail:success }
+my_app_mail_send:
+    path:     /send
+    defaults: { _controller: MyAppMailBundle:Mail:send }

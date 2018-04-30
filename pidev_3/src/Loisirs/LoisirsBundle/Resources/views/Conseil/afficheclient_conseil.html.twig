@@ -1,0 +1,27 @@
+{% extends 'template.html.twig' %}
+
+{% block body %}
+    <html>
+    <head>
+        <link rel="stylesheet" href="{{ asset('notif.css') }}">
+        <script src="{{ asset('jquery.min.js') }}"></script>
+        <script>
+            $(document).ready(function(){
+                $(".notification").each(function(){
+                    $(this).css('top',65*$(this).index()+'px');
+                    $(".notification").animate({'left':'0px'});
+                    $(".notification").delay(5000).fadeOut("low");
+                });
+                $(".notification").click(function(){
+                    $(this).hide();
+                })
+            });
+        </script>
+    </head>
+    <body>
+    {% for m in conseil  %}
+    <div class="notification">{{ m.titre }}<br>{{ m.contenu }}</div>
+    {% endfor %}
+    </body>
+    </html>
+{% endblock %}

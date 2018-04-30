@@ -1,0 +1,63 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+<html>
+<head>
+
+    <title>Modifier Bon Plan</title>
+</head>
+<body><div class="main-panel">
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header" data-background-color="purple">
+                            <h4 class="title">Espace Administration des loisirs</h4>
+                            <p class="category">Modifier un bon plan</p>
+                        </div>
+                        <div class="card-content table-responsive">
+
+
+                        {{ form_start(f) }}
+
+            <label>Categorie</label><br>
+            {{ form_widget(f.categorie) }}<br>
+            <label>Region</label><br>
+            {{ form_widget(f.region) }}<br>
+
+            <label>Nom</label><br>
+            {{ form_widget(f.nom) }}<br>
+            <label>Adresse</label><br>
+            {{ form_widget(f.adresse) }}<br>
+            <label>Latitude</label><br>
+            {{ form_widget(f.lat) }}<br>
+            <label>Longitude</label><br>
+            {{ form_widget(f.lng) }}<br>
+            <label>Description</label><br>
+            {{ form_widget(f.description) }}<br>
+
+
+
+            <br>{{ form_widget(f.Accepter) }}<br>
+            <br>{{ form_end(f) }}  </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+
+</body></html>
+{% endblock %}
+

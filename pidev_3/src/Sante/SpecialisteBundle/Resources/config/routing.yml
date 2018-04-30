@@ -1,0 +1,68 @@
+sante_specialiste_homepage:
+    path:     /
+    defaults: { _controller: SanteSpecialisteBundle:Default:index }
+
+ajouter_info:
+    path:     /ajouterInfo
+    defaults: { _controller: SanteSpecialisteBundle:MedecinSpecialiste:ajouterInfo }
+supprimercompte:
+    path:     /supprimercompte
+    defaults: { _controller: SanteSpecialisteBundle:MedecinSpecialiste:supprimercompte }
+accepterspecialiste:
+    path:     /accepterspecialiste/{id}
+    defaults: { _controller: SanteSpecialisteBundle:MedecinSpecialiste:accepterspecialiste }
+refuserspecialiste:
+    path:     /refuserspecialiste/{id}
+    defaults: { _controller: SanteSpecialisteBundle:MedecinSpecialiste:refuserspecialiste }
+verifprofil:
+    path:     /verifprofil
+    defaults: { _controller: SanteSpecialisteBundle:MedecinSpecialiste:verifprofil }
+
+modifier_info:
+    path:     /modifierInfo/{id}
+    defaults: { _controller: SanteSpecialisteBundle:MedecinSpecialiste:modifierInfo }
+
+detailMedecin:
+    path:     /detailMedecin/{cin}
+    defaults: { _controller: SanteSpecialisteBundle:MedecinSpecialiste:DetailMedecin }
+
+modifierHoraire:
+    path:     /modifierHoraire/{id}
+    defaults: { _controller: SanteSpecialisteBundle:horaireTravail:modifierHoraire}
+ajouterHoraire1:
+    path:     /ajouterhoraire1/{id}
+    defaults: { _controller: SanteSpecialisteBundle:horaireTravail:ajouterHoraire1}
+ajouterHoraire2:
+    path:     /ajouterhoraire2/{id}
+    defaults: { _controller: SanteSpecialisteBundle:horaireTravail:ajouterHoraire2}
+ajouterHoraire3:
+    path:     /ajouterhoraire3/{id}
+    defaults: { _controller: SanteSpecialisteBundle:horaireTravail:ajouterHoraire3}
+ajouterHoraire4:
+    path:     /ajouterhoraire4/{id}
+    defaults: { _controller: SanteSpecialisteBundle:horaireTravail:ajouterHoraire4}
+ajouterHoraire5:
+    path:     /ajouterhoraire5/{id}
+    defaults: { _controller: SanteSpecialisteBundle:horaireTravail:ajouterHoraire5}
+ajouterHoraire6:
+    path:     /ajouterhoraire6/{id}
+    defaults: { _controller: SanteSpecialisteBundle:horaireTravail:ajouterHoraire6}
+
+ListePediatres:
+    path:     /pediatres
+    defaults: { _controller: SanteSpecialisteBundle:MedecinSpecialiste:listePediatres }
+
+
+ListeOthonistes:
+    path:     /orthophonistes
+    defaults: { _controller: SanteSpecialisteBundle:MedecinSpecialiste:listeOrthophonistes }
+
+
+layoutsanteauthentif:
+    path:     /layoutsanteauthentif
+    defaults: { _controller: SanteSpecialisteBundle:specialiste:layoutsanteauthentif }
+forum:
+    path:     /forum
+    defaults: { _controller: SanteSpecialisteBundle:specialiste:AfficherForum }
+
+

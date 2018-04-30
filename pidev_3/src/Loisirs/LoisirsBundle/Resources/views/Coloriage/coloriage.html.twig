@@ -1,0 +1,109 @@
+{% extends 'template.html.twig' %}
+
+{% block body %}
+<html>
+<head>
+
+    <!-- PLUGINS CSS STYLE -->
+    <link href="{{ asset('Client/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- GOOGLE FONT -->
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700') }}" rel='stylesheet' type='text/css'>
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Dosis:400,300,600,700') }}" rel='stylesheet' type='text/css'>
+
+    <!-- CUSTOM CSS -->
+    <link href="{{ asset('Client/css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('Client/css/default.css') }}" id="option_color">
+
+
+    <title>Feuille de Coloriage</title>
+</head>
+<body class="body-wrapper">
+<div class="main-wrapper">
+
+    <!-- MAIN SECTION -->
+    <section class="mainContent full-width clearfix">
+        <div class="container">
+            <div class="col-xs-12">
+                <div class="sectionTitle text-center">
+                    <h2>
+                        <span class="shape shape-left bg-color-4"></span>
+                        <span>Feuille Coloriage</span>
+                        <span class="shape shape-right bg-color-4"></span>
+
+                    </h2>
+                </div>
+            </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="tabCommon">
+                          <center>
+                              <div class="tab-content">
+                                  <div id="home" class="tab-pane fade in active">
+                                      <div class="media">
+<p>Il semble que le Père-Noël soit passé par là : des cadeaux jonchent le sol de ce salon, décoré pour l'occasion. Un sapin, une cheminée, ça sent bon Noël !<br>
+</p>
+                                          <img class="media-object img-rounded" src="{{ asset('coloriages/noel.jpg')}}" alt="Image" style = "height:500px">
+
+                                          <a href="{{path('download_file',{nom:'noel.jpg'})}}" class="btn btn-primary">Telecharger</a>
+
+                                      </div>
+                                  </div>
+                              </div>
+
+                          </center>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="tabCommon">
+                        <center>
+                        <div class="tab-content">
+                            <div id="home" class="tab-pane fade in active">
+                                <div class="media">
+                                    <p>
+Ces deux petits garçons ont réussi à se hisser sur le dos du cheval de la ferme. Vont-ils réussir à se promener sans tomber ?<br>
+                                    </p>
+                                        <img class="media-object img-rounded" src="{{ asset('coloriages/chev.jpg')}}" alt="Image" style = "height:500px">
+
+                                    <a href="{{path('download_file',{nom:'chev.jpg'})}}" class="btn btn-primary">Telecharger</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        </center>
+                        </div>
+                </div>
+            </div>
+        <div class="row">
+                <div class="col-xs-12">
+                    <div class="tabCommon">
+                        <center>
+                        <div class="tab-content">
+                            <div id="home" class="tab-pane fade in active">
+                                <div class="media">
+                                <p>
+Quelle souplesse ! Cet acrobate de cirque est un gymnaste émérite. Il parvient à réaliser des numéros d'adresse et d'agilité que le public ne peut qu'applaudir.<br>
+                                </p>
+                                    <img class="media-object img-rounded" src="{{ asset('coloriages/cir.jpg')}}" alt="Image" style = "height:500px">
+
+                                    <a href="{{path('download_file',{nom:'cir.jpg'})}}" class="btn btn-primary">Telecharger</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends 'template.html.twig' %}
+
+{% block body %}
+<html>
+<head>
+
+    <!-- PLUGINS CSS STYLE -->
+    <link href="{{ asset('Client/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- GOOGLE FONT -->
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700') }}" rel='stylesheet' type='text/css'>
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Dosis:400,300,600,700') }}" rel='stylesheet' type='text/css'>
+
+    <!-- CUSTOM CSS -->
+    <link href="{{ asset('Client/css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('Client/css/default.css') }}" id="option_color">
+
+
+    <title>Liste des Bons plans</title>
+</head>
+<body class="body-wrapper">
+<div class="main-wrapper">
+
+    <!-- MAIN SECTION -->
+    <section class="mainContent full-width clearfix">
+        <div class="container">
+            <div class="col-xs-12">
+                    <div class="sectionTitle text-center">
+                        <h2>
+                            <span class="shape shape-left bg-color-4"></span>
+                            <span>Bons Plans</span>
+                            <span class="shape shape-right bg-color-4"></span>
+
+
+                        </h2>
+
+                        <div class="col-md-3 col-sm-4 col-xs-12 pull-left">
+                            <aside>
+                                <div class="panel panel-default courseSidebar">
+                                    <div class="panel-heading bg-color-1 border-color-1">
+                                        <h3 class="panel-title">Recherche</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="input-group">
+                                            <form action="" method="post" >
+                                                <input type="text" name="nom" class="form-control" placeholder="rechercher par nom..." aria-describedby="basic-addon2" >
+                                                <span class="input-group-addon" id="basic-addon2">
+                                <input class="btn btn-primary bg-color-1" type="Submit" name="rechercher" value="OK"/>
+                                </span>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </aside>
+                        </div>
+
+                    </div>
+            </div>
+
+            {% if bonplan|length >0 %}
+
+                    <section class="mainContent full-width clearfix coursesSection">
+                        <div class="container">
+                            <div class="row">
+                                    {% for m in bonplan  %}
+                                    <div class="col-sm-4 col-xs-12 block">
+                                        <div class="thumbnail thumbnailContent">
+                                            <img src="{{ asset('uploads/images/') }}{{ m.nomImage }}" >
+                                            <div class="caption border-color-1">
+                                                <h3><a href="" class="color-1">{{ m.nom }}</a></h3>
+                                                Note Global: {{ m.rating }} XP
+                                                <ul class="list-inline btn-yellow">
+                                                 <li><a href="{{ path('_avis_bonplan',{'id':m.id})}}" class="btn btn-primary">Plus</a>
+                                                 </li>
+                                                 <li>
+                                                     <a href="{{ path('_map',{'id':m.id})}}"  class="btn btn-primary">Map</a>
+
+                                                 </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {% endfor %}
+                            </div>
+
+
+                        </div>
+
+                    </section>
+
+            {% else %}
+                <center><h1 >Pas de Bon Plan avec ce Nom</h1></center>
+            {% endif %}
+        </div>
+    </section>
+</div>
+
+
+
+</body>
+</html>
+{% endblock %}

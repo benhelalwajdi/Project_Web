@@ -1,0 +1,70 @@
+{% extends 'template.html.twig' %}
+
+{% block body %}
+    <html>
+    <head>
+
+        <!-- PLUGINS CSS STYLE -->
+        <link href="{{ asset('Client/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+        <!-- GOOGLE FONT -->
+        <link href="{{ asset('https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700') }}" rel='stylesheet' type='text/css'>
+        <link href="{{ asset('https://fonts.googleapis.com/css?family=Dosis:400,300,600,700') }}" rel='stylesheet' type='text/css'>
+
+        <!-- CUSTOM CSS -->
+        <link href="{{ asset('Client/css/style.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('Client/css/default.css') }}" id="option_color">
+
+
+        <title>Liste des Themes</title>
+    </head>
+    <body class="body-wrapper">
+    <section class="mainContent full-width clearfix">
+        <div class="container">
+
+            <div class="sectionTitle text-center">
+
+                <h2>
+                    <span class="shape shape-left bg-color-4"></span>
+                    <span>Themes</span>
+
+                    <span class="shape shape-right bg-color-4"></span>
+
+
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <section class="mainContent full-width clearfix coursesSection">
+            <div class="container">
+                <div class="row">
+                    {% for m in theme  %}
+
+                        <div class="col-sm-4 col-xs-12 block">
+                            <div class="thumbnail thumbnailContent">
+                                <img src="{{ asset('uploads/images/') }}{{ m.nomImage }}" >
+                                <div class="caption border-color-1">
+                                    <h3><a href="" class="color-1">{{ m.nom }}</a></h3>
+                                    <h4><a href="" class="color-2">Difficulté :{{ m.niveau }}</a></h4>
+                                    <ul class="list-inline btn-yellow">
+                                        <li><a href="{{ path('_afficheclient_quiz',{'id':m.Id}) }}" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Quiz</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+    </body>
+    </html>
+{% endblock %}

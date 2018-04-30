@@ -1,0 +1,53 @@
+{% extends 'template.html.twig' %}
+
+{% block body %}
+
+
+<html><head>
+<title>Rating</title>
+    <!-- PLUGINS CSS STYLE -->
+    <link href="{{ asset('Client/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- GOOGLE FONT -->
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700') }}" rel='stylesheet' type='text/css'>
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Dosis:400,300,600,700') }}" rel='stylesheet' type='text/css'>
+
+    <!-- CUSTOM CSS -->
+    <link href="{{ asset('Client/css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('Client/css/default.css') }}" id="option_color">
+
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />
+        <script src="{{ asset('jquery.min.js') }}"></script>
+        <script src="{{ asset('bundles/starrating/js/rating.js') }}"></script>
+
+</head>
+<body class="body-wrapper">
+<section class="mainContent full-width clearfix" >
+    <div class="container">
+        <div class="sectionTitle text-center">
+            <h2>
+                <span class="shape shape-left bg-color-4"></span>
+                <span>Noter un Bon Plan</span>
+                <span class="shape shape-right bg-color-4"></span>
+                <span class="shape shape-right bg-color-4"></span>
+            </h2>
+        </div>
+        <center>
+        <div class="homeContactContent">
+            {{ form_start(f) }}
+            <div class="form-group">{{ form_widget(f.categorie,{'attr': {'class': 'form-control border-color-1'}}) }}</div>
+            <div class="form-group">{{ form_widget(f.region,{'attr': {'class': 'form-control border-color-1'}}) }}</div>
+            <div class="form-group">{{ form_widget(f.nom,{'attr': {'class': 'form-control border-color-1'}}) }}</div>
+            <div class="form-group">{{ form_widget(f.adresse,{'attr': {'class': 'form-control border-color-1'}}) }}</div>
+            <div class="form-group">{{ form_widget(f.description,{'attr': {'class': 'form-control border-color-1'}}) }}</div>
+            <div class="form-group"><img class="media-object img-rounded" src="{{ asset('uploads/images/') }}{{image}}" alt="Image"/></div>
+            <div class="form-group"><h3>Rating</h3>{{ form_widget(f.rating) }}</div>
+            <div class="form-group">{{ form_widget(f.Accepter,{'attr': {'class': 'btn btn-primary'}}) }}</div>
+            {{ form_end(f) }}
+        </div>
+        </center>
+    </div>
+</section>
+</body>
+</html>
+{% endblock %}

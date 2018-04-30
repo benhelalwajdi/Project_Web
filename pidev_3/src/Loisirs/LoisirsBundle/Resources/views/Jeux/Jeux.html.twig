@@ -1,0 +1,121 @@
+{% extends 'template.html.twig' %}
+
+{% block body %}
+<html>
+<head>
+
+    <!-- PLUGINS CSS STYLE -->
+    <link href="{{ asset('Client/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- GOOGLE FONT -->
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700') }}" rel='stylesheet' type='text/css'>
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Dosis:400,300,600,700') }}" rel='stylesheet' type='text/css'>
+
+    <!-- CUSTOM CSS -->
+    <link href="{{ asset('Client/css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('Client/css/default.css') }}" id="option_color">
+
+
+    <title>Jeux</title>
+</head>
+<body class="body-wrapper">
+<div class="main-wrapper">
+
+    <!-- MAIN SECTION -->
+    <section class="mainContent full-width clearfix">
+        <div class="container">
+            <div class="col-xs-12">
+                <div class="sectionTitle text-center">
+                    <h2>
+                        <span class="shape shape-left bg-color-4"></span>
+                        <span>Les derniers jeux ajoutés</span>
+                        <span class="shape shape-right bg-color-4"></span>
+
+                    </h2>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xs-12">
+                <div class="accordionCommon" id="accordionOne">
+                    <div class="panel-group" id="accordionFirst">
+                        <div class="panel panel-default">
+                            <a class="panel-heading accordion-toggle bg-color-1" >
+                                <span>Parking Fury</span>
+                            </a>
+                            <div id="collapse-aa" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <p><iframe src="https://www.silvergames.com/fr/parking-fury/iframe" width="480" height="300" style="margin:0;padding:0;border:0"></iframe><br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xs-12">
+                <div class="accordionCommon" id="accordionOne">
+                    <div class="panel-group" id="accordionFirst">
+                        <div class="panel panel-default">
+                            <a class="panel-heading accordion-toggle bg-color-1" >
+                                <span>Piano Tiles</span>
+                            </a>
+                            <div id="collapse-aa" class="panel-collapse collapse in">
+                                <div class="panel-body">
+<p>
+    <iframe src="https://www.silvergames.com/fr/piano-tiles/iframe" width="480" height="300" style="margin:0;padding:0;border:0"></iframe><br>
+
+
+
+</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-xs-12">
+                <div class="accordionCommon" id="accordionOne">
+                    <div class="panel-group" id="accordionFirst">
+                        <div class="panel panel-default">
+                            <a class="panel-heading accordion-toggle bg-color-1" >
+                                <span>Doodle Jump</span>
+                            </a>
+                            <div id="collapse-aa" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <p>
+
+                                        <iframe src="https://www.silvergames.com/fr/doodle-jump/iframe" width="480" height="300" style="margin:0;padding:0;border:0"></iframe><br>
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xs-12">
+                <div class="accordionCommon" id="accordionOne">
+                    <div class="panel-group" id="accordionFirst">
+                        <div class="panel panel-default">
+                            <a class="panel-heading accordion-toggle bg-color-1" >
+                                <span>Bubble Shooter</span>
+                            </a>
+                            <div id="collapse-aa" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <p>
+                                        <iframe src="https://www.silvergames.com/fr/bubble-shooter/iframe" width="480" height="300" style="margin:0;padding:0;border:0"></iframe>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+    </section>
+
+</div>
+
+</body>
+</html>
+{% endblock %}

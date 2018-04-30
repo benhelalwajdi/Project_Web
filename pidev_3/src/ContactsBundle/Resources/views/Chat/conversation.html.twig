@@ -1,0 +1,125 @@
+{% extends "ContactsBundle:Chat:inboxing.html.twig" %}
+
+{% block title %}Acceuil{% endblock %}
+
+{% block messages %}
+
+    <div class="tab-content scrollbar-wrapper wrapper scrollbar-outer">
+        <div class="tab-pane active" id="contact-1">
+            <div class="chat-body">
+                <div class="send-message">
+
+                    <ul class="chat-message" >
+                        {% if thread %}
+                            {% for message in thread.messages|reverse %}
+
+                                <li class="  {% if message.sender.id==us.id %}right{% else %}left{% endif %}">
+                                    {% if message.sender.id==us.id %}
+                                        {% else %}
+                                        <a href="{{ path('consulterbs', {'id': message.sender.id}) }}"
+                                           class="profile-link"></a>
+                                    {% endif %}
+                                    <div class="chat-item">
+                                        <div class="chat-item-header">
+                                            <h5><a href="{{ path('consulterbs', {'id': message.sender.id}) }}"
+                                                   class="profile-link"> {{ message.sender }}</a></h5>
+                                            <small class="text-muted">{{ message.createdAt|date('d/m\\ H:i:s') }}</small>
+                                        </div>
+                                        <p>    {{ message.body }}</p>
+                                    </div>
+
+                                </li>
+                            {% endfor %}
+                        {% else %}
+                            <br>
+                            <center>
+                                <a href="{{ path('consulterbs', {'id': reciepent.id}) }}"
+                                   class="profile-link">
+                                    <div class="profile-info">
+                                        <h4> {{ reciepent.prenom }} {{ reciepent.nom }} </h4>
+                                    </div>
+                                </a>
+                                <h1><p class="text-muted ">Envoyer votre premier message à {{ reciepent.username }}</p>
+                                </h1>
+                            </center>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <center>
+        <div class="send-message">
+
+
+            <form action="{{ path('send', {'id': reciepent.id}) }}" method="post">
+                <div class="col-md-10">
+                    <input type="text" name="body" class="form-control" placeholder="Ecrivez un message..."
+                           required id="msg">
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary" id="bts"><span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;Envoyer
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </center>
+    <script src="{{ asset('https://code.jquery.com/jquery-3.1.1.min.js') }}"></script>
+     <script>
+         $(document).ready(function(){
+             setInterval(function(){ reload_page(); },60000);
+         });
+
+         function reload_page()
+         {
+             window.location.reload(true);
+         }
+     </script>
+    {% block stylesheets %}
+        <link href="{{ asset('Public/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" media="all"/>
+        <link href="{{ asset('Public/css/style.css') }}" rel="stylesheet" type="text/css" media="all"/>
+        <link href="{{ asset('Public/css/ionicons.min.css') }}" rel="stylesheet" type="text/css" media="all"/>
+        <link href="{{ asset('Public/css/style.css') }}" rel="stylesheet" type="text/css" media="all"/>
+        <link href="{{ asset('Public/css/font-awesome.min.css') }} " rel="stylesheet" type="text/css" media="all"/>
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,600,600italic,700' rel='stylesheet' type='text/css'>
+
+        <!--Favicon-->
+        {#<link rel="shortcut icon" type="image/png" href="images/fav.png"/>#}
+    {% endblock %}
+
+    {% block js %}
+
+
+        <script src="{{ asset('Public/js/jquery-3.1.1.min.js') }}"></script>
+        <script src="{{ asset('Public/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('Public/js/jquery.appear.min.js') }}"></script>
+        <script src="{{ asset('Public/js/jquery.incremental-counter.js') }}"></script>
+        <script src="{{ asset('Public/js/script.js') }}"></script>
+        <script src="{{ asset('Public/css/jquery.scrollbar.css') }}"></script>
+        <script src="{{ asset('Public/js/jquery.sticky-kit.min.js') }}"></script>
+        <script src="{{ asset('//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js')}}"></script>
+        <script>
+            if (annyang) {
+                var commands = {
+                    'okay': function() { $("#bts").click() }
+                };
+                annyang.addCallback('result', function(userSaid, commandText, phrases) {
+                    console.log(userSaid); // sample output: 'hello'
+                    console.log(commandText); // sample output: 'hello (there)'
+                    console.log(phrases); // sample output: ['hello', 'halo', 'yellow', 'polo', 'hello kitty']
+                    if(userSaid[0]!= " okay") {
+                        console.log(userSaid[0]);
+                        console.log(userSaid[0]!== 'okay');
+                    document.getElementById('msg').value = userSaid[0];
+                    }
+                });
+                annyang.addCommands(commands);
+                annyang.start();
+            }
+        </script>
+
+    {% endblock %}
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+<html>
+<head>
+    <title>Modifier Quiz</title>
+</head>
+<body>
+<div class="main-panel">
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header" data-background-color="purple">
+                            <h4 class="title">Espace Administration des loisirs</h4>
+                            <p class="category">Modifier un quiz</p>
+                        </div>
+                        <div class="card-content table-responsive">
+
+
+                        {{ form_start(f) }}
+            <label>Theme</label><br>
+            {{ form_widget(f.theme) }}<br>
+            <label>Question</label><br>
+                {{ form_widget(f.question) }}<br>
+            <label>Proposition 1</label><br>
+                {{ form_widget(f.prop1) }}<br>
+            <label>Proposition 2</label><br>
+            {{ form_widget(f.prop2) }}<br>
+            <label>Proposition 3</label><br>
+            {{ form_widget(f.prop3) }}<br>
+            <label>Reponse</label><br>
+            {{ form_widget(f.reponse) }}<br><br>
+        {{ form_widget(f.Accepter) }}<br>
+        {{ form_end(f) }}<br>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends 'template.html.twig' %}
+
+{% block body %}
+<html>
+<head>
+
+    <!-- PLUGINS CSS STYLE -->
+    <link href="{{ asset('Client/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- GOOGLE FONT -->
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700') }}" rel='stylesheet' type='text/css'>
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Dosis:400,300,600,700') }}" rel='stylesheet' type='text/css'>
+
+    <!-- CUSTOM CSS -->
+    <link href="{{ asset('Client/css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('Client/css/default.css') }}" id="option_color">
+
+
+    <title>Liste des Bons plans</title>
+</head>
+<body class="body-wrapper">
+<div class="main-wrapper">
+
+    <!-- MAIN SECTION -->
+    <section class="mainContent full-width clearfix">
+        <div class="container">
+            <div class="col-xs-12">
+                    <div class="sectionTitle text-center">
+                        <h2>
+                            <span class="shape shape-left bg-color-4"></span>
+                            <span>Quiz</span>
+                            <span class="shape shape-right bg-color-4"></span>
+
+
+                        </h2>
+
+
+
+                    </div>
+            </div>
+            <h3 style="text-align: center">Votre dernier score  est : {{ res }}/{{ quiz|length  }}</h3>
+            <form method="POST" action="">
+
+                    <div>
+                        <div class="col-xs-12">
+                            <div class="tabCommon">
+                                <div class="tab-content">
+                                    <div id="home" class="tab-pane fade in active">
+                                        <div class="media">
+                                            <div class="media-body">
+                                                {% for q in quiz %}
+                                                <fieldset id={{ q.id }}>
+                                                <h3 class="media-heading"> {{ q.question }}</h3>
+
+                                                    <br>
+                                                    <h4> <input type="radio" name={{ q.id }} value={{ q.prop1 }} /> {{ q.prop1 }}</h4><br>
+                                                    <h4> <input type="radio" name={{ q.id }} value={{ q.prop2 }} /> {{ q.prop2 }}</h4><br>
+                                                    <h4> <input type="radio" name={{ q.id }} value={{ q.prop3 }} /> {{ q.prop3 }}</h4><br>
+                                                </fieldset>
+                                                {% endfor %}
+                                                <button type="submit" class="btn btn-primary">Envoyer </button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+
+
+            </form>
+
+
+            </div>
+
+
+        </div>
+    </section>
+</div>
+
+
+
+</body>
+</html>
+{% endblock %}

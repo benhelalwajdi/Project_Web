@@ -1,0 +1,54 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+<html>
+<head>
+     <title>Ajout Recette</title>
+</head>
+<body>
+
+<div class="main-panel">
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header" data-background-color="purple">
+                            <h4 class="title">Espace Administration des loisirs</h4>
+                            <p class="category">Modifier une recette</p>
+                        </div>
+                        <div class="card-content table-responsive">
+        {{ form_start(f) }}
+
+        <label>Nom</label><br>
+        {{ form_widget(f.nom) }}<br>
+            <label>Ingredients</label><br>
+                {{ form_widget(f.ingredients) }}<br>
+            <label>Nombre Personnes</label><br>
+                {{ form_widget(f.nbrpersonnes) }}<br>
+
+
+
+
+            <br>{{ form_widget(f.Accepter) }}<br>
+        <br>{{ form_end(f) }}
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends 'template.html.twig' %}
+
+{% block body %}
+<html>
+<head>
+
+    <!-- PLUGINS CSS STYLE -->
+    <link href="{{ asset('Client/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- GOOGLE FONT -->
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700') }}" rel='stylesheet' type='text/css'>
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Dosis:400,300,600,700') }}" rel='stylesheet' type='text/css'>
+
+    <!-- CUSTOM CSS -->
+    <link href="{{ asset('Client/css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('Client/css/default.css') }}" id="option_color">
+
+
+    <title>Liste des Blagues</title>
+</head>
+<body class="body-wrapper">
+<section class="mainContent full-width clearfix">
+    <div class="container">
+
+        <div class="sectionTitle text-center">
+
+            <h2>
+                <span class="shape shape-left bg-color-4"></span>
+                <span>Blagues</span>
+
+                <span class="shape shape-right bg-color-4"></span>
+
+
+            </h2>
+
+        </div>
+
+        <div class="col-md-3 col-sm-4 col-xs-12 pull-left">
+            <aside>
+                <div class="panel panel-default courseSidebar">
+                    <div class="panel-heading bg-color-1 border-color-1">
+                        <h3 class="panel-title">Recherche</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="input-group">
+                            <form action="" method="post" >
+                            <input type="date" name="date" class="form-control" placeholder="Enter Your Search" aria-describedby="basic-addon2" >
+                            <span class="input-group-addon" id="basic-addon2">
+        <input class="btn btn-primary bg-color-1" type="Submit" name="rechercher" value="OK"/>
+                                </span>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </aside>
+        </div>
+    </div>
+
+    {% if blague|length >0 %}
+        {% for m in blague  %}
+        <div class="col-sm-6 col-xs-12">
+            <div class="accordionCommon" id="accordionOne">
+                <div class="panel-group" id="accordionFirst">
+                    <div class="panel panel-default">
+                        <a class="panel-heading accordion-toggle bg-color-1" >
+                            <span>{{ m.Titre }}</span>
+                        </a>
+                        <div id="collapse-aa" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <p>{{ m.Description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <center><h1 >Pas de Blagues pour cette Date</h1></center>
+    {% endif %}
+    </div>
+
+</section>
+
+
+
+</body>
+</html>
+{% endblock %}

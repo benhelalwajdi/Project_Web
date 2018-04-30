@@ -1,0 +1,55 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+
+<html>
+<head>
+
+    <title>Ajout Theme</title>
+</head>
+<body>
+<div class="main-panel">
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header" data-background-color="purple">
+                            <h4 class="title">Espace Administration des loisirs</h4>
+                            <p class="category">Ajouter un theme</p>
+                        </div>
+                        <div class="card-content table-responsive">
+
+                        {{ form_start(f) }}
+
+            <label>Nom</label><br>
+                {{ form_widget(f.nom) }}<br>
+
+            <label>Niveau</label><br>
+                {{ form_widget(f.niveau) }}<br>
+            <label>Image</label><br>
+            {{ form_widget(f.file) }}<br>
+
+            <br>{{ form_widget(f.Accepter) }}<br>
+        <br>{{ form_end(f) }}
+
+    </div>
+
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+
+</div>
+
+
+
+</body>
+</html>
+{% endblock %}

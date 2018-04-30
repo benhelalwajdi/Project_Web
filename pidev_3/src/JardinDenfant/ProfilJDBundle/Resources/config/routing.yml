@@ -1,0 +1,82 @@
+jardin_denfant_profil_jd_homepage:
+    path:     /
+    defaults: { _controller: JardinDenfantProfilJDBundle:ProfilJD:index }
+
+ajouter_p_j_d:
+    path:     /ajoutJD
+    defaults: { _controller: JardinDenfantProfilJDBundle:ProfilJD:ajouterPJD }
+
+supprimer_p_j_d:
+    path:     /supprimerPJD/{numauth}
+    defaults: { _controller: JardinDenfantProfilJDBundle:ProfilJD:supprimer }
+
+modifier_p_j_d:
+    path:     /modifierPJD/{numauth}
+    defaults: { _controller: JardinDenfantProfilJDBundle:ProfilJD:modifierPJD }
+
+afficher_p_j_d:
+    path:     /afficherPJD
+    defaults: { _controller: JardinDenfantProfilJDBundle:ProfilJD:afficherPJD }
+afficher_tout:
+    path:     /affichertout
+    defaults: { _controller: JardinDenfantProfilJDBundle:ProfilJD:affichtout }
+profil:
+    path:     /profil/{numauth}
+    defaults: { _controller: JardinDenfantProfilJDBundle:ProfilJD:profil }
+
+recherche:
+    path:     /rech
+    defaults: { _controller: JardinDenfantProfilJDBundle:ProfilJD:search }
+ajout_e:
+    path:     /ajoutE
+    defaults: { _controller: JardinDenfantProfilJDBundle:Evenement:ajoutE }
+
+modif_e:
+    path:     /modifE/{ide}
+    defaults: { _controller: JardinDenfantProfilJDBundle:Evenement:modifE }
+
+supprime_e:
+    path:     /supprimeE/{ide}
+    defaults: { _controller: JardinDenfantProfilJDBundle:Evenement:supprimeE }
+
+recherche_e:
+    path:     /rechercheE
+    defaults: { _controller: JardinDenfantProfilJDBundle:Evenement:rechercheE }
+
+afficher_e:
+    path:     /afficherE
+    defaults: { _controller: JardinDenfantProfilJDBundle:Evenement:afficherE }
+calendar_page:
+    path:     /calendrier
+    defaults: { _controller: JardinDenfantProfilJDBundle:Evenement:calander }
+
+calendar_data:
+    path:     /cal/data
+    defaults: { _controller: JardinDenfantProfilJDBundle:Evenement:loadCalendrierData }
+map:
+    path:     /map/{numauth}
+    defaults: { _controller: JardinDenfantProfilJDBundle:ProfilJD:map }
+
+inscrirer:
+    path:     inscri/{ide}
+    defaults: { _controller: JardinDenfantProfilJDBundle:UserEvents:inscrirer }
+
+
+annulerInscrit:
+    path:     annnuler/{ide}
+    defaults: { _controller: JardinDenfantProfilJDBundle:UserEvents:AnnulerInscrit }
+afficheAdmin:
+    path:     /affAdmin
+    defaults: { _controller: JardinDenfantProfilJDBundle:ProfilJD:afficherAdmin}
+valideradmin:
+    path:     /valider/{numauth}
+    defaults: { _controller: JardinDenfantProfilJDBundle:ProfilJD:valideAdmin }
+voirDeatil:
+    path:     /detail/{numauth}
+    defaults: { _controller: JardinDenfantProfilJDBundle:ProfilJD:Detail }
+affichEventsParJardin:
+    path:     /affchimyev
+    defaults: { _controller: JardinDenfantProfilJDBundle:Evenement:afficherEventsParJardin }
+ajax:
+    path:     /ajax
+    defaults: { _controller: JardinDenfantProfilJDBundle:ProfilJD:rechercheAjax }

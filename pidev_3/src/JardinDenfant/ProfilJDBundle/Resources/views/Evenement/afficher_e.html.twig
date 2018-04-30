@@ -1,0 +1,138 @@
+{% extends 'template.html.twig' %}
+
+{% block body %}
+
+    {% for i in evts %}
+
+<div class="media courseList">
+
+
+    <a class="media-left" href="single-blog-left-sidebar.html">
+
+        <img class="media-object" src="{{ asset('images/' ~ i.image) }}"   alt="Image"  >
+        <span class="sticker-round bg-color-1">{{ i.start |date('y-m-d')}}</span>
+    </a>
+    <div class="media-body">
+        <h3 class="media-heading"><a href="single-blog-left-sidebar.html" class="color-1">{{ i.nonE }}</a></h3>
+        <ul class="list-inline">
+            <li><i class="fa fa-user" aria-hidden="true"></i>{{ app.user.username }}</li>
+
+        </ul>
+        <p>
+
+        <p><strong style="color: yellowgreen"> A propos l'evenement </strong>{{ i.apropos }} </p>
+        <p><strong style="color: coral"> heure d'evenement</strong>{{ i.heure }}</p>
+        <p> <strong style="color: deepskyblue"> duree:</strong> {{ i.duree }}</p>
+        <p><strong style="color: coral"> heure d'evenement</strong>{{ i.heure }}</p>
+        <p> <strong style="color: #bfff57">  adresse:</strong> {{ i. adresse }}</p>
+        <p> <strong style="color: #ff5dcd">   nbre de place max:</strong> {{ i.nbrPlaceMax }}</p>
+
+        </p><br>
+
+
+    </div>
+
+    {% if i.ide in tab %}
+        <a href="{{ path('annulerInscrit',{'ide':i.ide} )}}" >
+            <button type="button" name ="submit" class="btn btn-warning btn-pill"> annuler </button>
+        </a>
+
+    {%else%}
+    <a href="{{ path('inscrirer',{'ide':i.ide} )}}" >
+        <button type="button" name ="submit" class="btn btn-warning btn-pill"> s'inscrire </button>
+    </a>
+
+    {% endif%}
+
+
+
+
+
+
+
+
+
+
+    <br>
+        <br>
+        <br>
+    </div>
+
+
+    {% endfor %}
+
+
+
+
+
+
+
+    <div class="pagerArea txt-center" style="text-align: center">
+        {{ knp_pagination_render(evts) }}
+    </div>
+
+
+
+
+
+
+
+<!--popup-->
+
+<div id="customPopup">
+    <h3>resultat </h3>
+    <p>Message du popup !</p>
+    <p> </p>
+    <input type="button" value="Ok" onclick="hidePopup();">
+</div>
+<style>
+
+    #customPopup
+    {
+        position: fixed;
+        display: none;
+        left: 50%;
+        top: 50%;
+        z-index: 2000;
+        padding: 20px;
+        width: 560px;
+        background-color: #EEEEEE;
+        font-size: 12px;
+        line-height: 16px;
+        color: #202020;
+        border : 3px outset #555555;
+    }
+</style>
+
+<a href="javascript:showPopup();" title="Montrer le popup">Popup !</a>
+<script>
+    function showPopup() {
+
+        // ici on insère dans notre page html notre div gris
+        $("#customPopup").before('<div id="grayBack"></div>');
+
+        // maintenant, on récupère la largeur et la hauteur de notre popup
+        var popupH = $("#customPopup").height();
+        var popupW = $("#customPopup").width();
+
+
+
+        // enfin, on fait apparaître en 300 ms notre div gris de fond, et une fois
+        // son apparition terminée, on fait apparaître en fondu notre popup
+
+        $("#grayBack").css('opacity', 0).fadeTo(300, 0.5, function () { $("#customPopup").fadeIn(500); });
+
+    }
+
+    function hidePopup() {
+
+        // on fait disparaître le gris de fond rapidement
+        $("#grayBack").fadeOut('fast', function () { $(this).remove() });
+
+        // on fait disparaître le popup à la même vitesse
+        $("#customPopup").fadeOut('fast', function () { $(this).hide() });
+
+    }
+</script>
+
+{% endblock %}

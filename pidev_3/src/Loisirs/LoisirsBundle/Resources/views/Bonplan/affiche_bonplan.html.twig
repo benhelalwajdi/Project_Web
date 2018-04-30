@@ -1,0 +1,68 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+
+<html>
+<head>
+    <title>Liste des Bons Plans</title>
+</head>
+<body>
+<div class="main-panel">
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header" data-background-color="purple">
+                            <h4 class="title">Espace Administration des loisirs</h4>
+                            <p class="category">Liste des Bons Plans</p>
+                        </div>
+                        <div class="card-content table-responsive">
+                            <table class="table">
+                                <thead class="text-primary">
+                                <th>Id</th>
+                                <th>Categorie</th>
+                                <th>Region</th>
+                                <th>Nom</th>
+                                <th>Adresse</th>
+                                <th>Image</th>
+                                <th>Suppression</th>
+                                <th>Modification</th>
+                                </thead>
+                                {% for m in bonplan  %}
+                                    <tbody>
+                                    <tr>
+                                        <td>{{ m.Id }}</td>
+                                        <td>{{ m.Categorie }}</td>
+                                        <td>{{ m.Region }}</td>
+                                        <td>{{ m.Nom }}</td>
+                                        <td>{{ m.Adresse }}</td>
+                                        <td><img src="{{ asset('uploads/images/') }}{{ m.nomImage }}" style = "width: 200px;height:200px"></td>
+
+                                        <td><a href="{{ path('_supp_bonplan',{'id':m.Id}) }}">delete here</a> </td>
+                                        <td><a href="{{ path('_modif_bonplan',{'id':m.Id}) }}">update here</a> </td>
+
+                                    </tr>
+                                    </tbody>
+                                {% endfor %}
+
+                            </table>
+                            <p class="category"><a href="{{ path('_recherche_bonplan')}}">Rechercher des Bons Plans</a></p>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'template.html.twig' %}
+
+{% block body %}
+<html>
+<head>
+
+    <!-- PLUGINS CSS STYLE -->
+    <link href="{{ asset('Client/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- GOOGLE FONT -->
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700') }}" rel='stylesheet' type='text/css'>
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Dosis:400,300,600,700') }}" rel='stylesheet' type='text/css'>
+
+    <!-- CUSTOM CSS -->
+    <link href="{{ asset('Client/css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('Client/css/default.css') }}" id="option_color">
+
+
+    <title>Detail Recette</title>
+</head>
+<body class="body-wrapper">
+<section class="mainContent full-width clearfix">
+    <div class="container">
+
+        <div class="sectionTitle text-center">
+
+            <h2>
+                <span class="shape shape-left bg-color-4"></span>
+                <span>Detail Recette</span>
+                <span class="shape shape-right bg-color-4"></span>
+
+
+            </h2>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="tabCommon">
+                <div class="tab-content">
+                    <div id="home" class="tab-pane fade in active">
+                        <div class="media">
+                            <a class="media-left" href="">
+                                <video  class="media-object" width="450" height="300" controls>
+                                    <source src="{{ asset('uploads/videos/') }}{{ recette.nomVid }}">
+
+                                </video>                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">{{ recette.nom }} </h3>
+                                <p><h4>Nombre de Personnes :{{ recette.nbrpersonnes }}</h4><br>
+                                </p>
+                                <p>{{ recette.ingredients }}.</p>
+                               </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+</section>
+</body>
+</html>
+{% endblock %}
+

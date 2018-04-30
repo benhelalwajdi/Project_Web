@@ -1,0 +1,142 @@
+loisirs_loisirs_homepageadmin:
+    path:     /admin
+    defaults: { _controller: LoisirsLoisirsBundle:Default:index }
+loisirs_loisirs_homepageclient:
+    path:     /client
+    defaults: { _controller: LoisirsLoisirsBundle:Conseil:AfficheClientConseil }
+
+_ajout_bonplan:
+    path:     /AjoutBonplan
+    defaults: { _controller: LoisirsLoisirsBundle:Bonplan:AjoutBonplan }
+
+_affiche_bonplan:
+    path:     /AfficheBonplan
+    defaults: { _controller: LoisirsLoisirsBundle:Bonplan:AfficheBonplan }
+
+
+_supp_bonplan:
+    path:     /SuppBonplan/{id}
+    defaults: { _controller: LoisirsLoisirsBundle:Bonplan:SupprimerBonplan }
+
+_modif_bonplan:
+    path:     /ModifBonplan/{id}
+    defaults: { _controller: LoisirsLoisirsBundle:Bonplan:ModifierBonplan }
+_recherche_bonplan:
+    path:     /RechercheBonplan
+    defaults: { _controller: LoisirsLoisirsBundle:Bonplan:RechercherBonplan }
+
+_ajout_blague:
+    path:     /AjoutBlague
+    defaults: { _controller: LoisirsLoisirsBundle:Blague:AjoutBlague }
+
+_affiche_blague:
+    path:     /AfficheBlague
+    defaults: { _controller: LoisirsLoisirsBundle:Blague:AfficheBlague }
+_supp_blague:
+    path:     /SuppBlague/{id}
+    defaults: { _controller: LoisirsLoisirsBundle:Blague:SupprimerBlague }
+
+_modif_blague:
+    path:     /ModifBlague/{id}
+    defaults: { _controller: LoisirsLoisirsBundle:Blague:ModifierBlague }
+
+_recherche_blague:
+    path:     /RechercheBlague
+    defaults: { _controller: LoisirsLoisirsBundle:Blague:RechercherBlague }
+
+_afficheclient_bonplan:
+    path:     /AffichageBonplan
+    defaults: { _controller: LoisirsLoisirsBundle:Bonplan:AfficheClientBonplan }
+
+_afficheclient_blague:
+    path:     /AffichageBlague
+    defaults: { _controller: LoisirsLoisirsBundle:Blague:AfficheClientBlague }
+_avis_bonplan:
+    path:     /AvisClient{id}
+    defaults: { _controller: LoisirsLoisirsBundle:Bonplan:AvisBonplan }
+_affiche_coloriage:
+    path:     /AffichageColoriage
+    defaults: { _controller: LoisirsLoisirsBundle:Coloriage:AfficheColoriage }
+download_file:
+    path:     /download{nom}
+    defaults: { _controller: LoisirsLoisirsBundle:Coloriage:downloadFile }
+
+_affiche_jeux:
+    path:     /AffichageJeux
+    defaults: { _controller: LoisirsLoisirsBundle:Jeux:Jeux }
+_map:
+    path:     /Carte{id}
+    defaults: { _controller: LoisirsLoisirsBundle:Bonplan:Map }
+
+_ajout_recette:
+    path:     /AjoutRecette
+    defaults: { _controller: LoisirsLoisirsBundle:Recettes:AjoutRecette }
+
+_affiche_recette:
+    path:     /AfficheRecette
+    defaults: { _controller: LoisirsLoisirsBundle:Recettes:AfficheRecette }
+_supp_recette:
+    path:     /SuppRecette/{id}
+    defaults: { _controller: LoisirsLoisirsBundle:Recettes:SupprimerRecette }
+_modif_recette:
+    path:     /ModifRecette/{id}
+    defaults: { _controller: LoisirsLoisirsBundle:Recettes:ModifierRecette }
+_recherche_recette:
+    path:     /RechercheRecette
+    defaults: { _controller: LoisirsLoisirsBundle:Recettes:RechercherRecette }
+_afficheclient_recette:
+    path:     /AffichageRecette
+    defaults: { _controller: LoisirsLoisirsBundle:Recettes:AfficheClientRecette }
+_affichedetail_recette:
+    path:     /DetailRecette/{id}
+    defaults: { _controller: LoisirsLoisirsBundle:Recettes:AfficheDetailRecette }
+_ajout_conseil:
+    path:     /AjoutConseil
+    defaults: { _controller: LoisirsLoisirsBundle:Conseil:AjoutConseil }
+
+_affiche_conseil:
+    path:     /AfficheConseil
+    defaults: { _controller: LoisirsLoisirsBundle:Conseil:AfficheConseil }
+_supp_conseil:
+    path:     /Suppconseil/{id}
+    defaults: { _controller: LoisirsLoisirsBundle:Conseil:SupprimerConseil }
+
+_modif_conseil:
+    path:     /ModifConseil/{id}
+    defaults: { _controller: LoisirsLoisirsBundle:Conseil:ModifierConseil }
+_ajout_theme:
+    path:     /AjoutTheme
+    defaults: { _controller: LoisirsLoisirsBundle:Theme:AjoutTheme }
+
+_affiche_theme:
+    path:     /AfficheTheme
+    defaults: { _controller: LoisirsLoisirsBundle:Theme:AfficheTheme }
+_supp_theme:
+    path:     /SuppTheme/{id}
+    defaults: { _controller: LoisirsLoisirsBundle:Theme:SupprimerTheme }
+
+_modif_theme:
+    path:     /ModifTheme/{id}
+    defaults: { _controller: LoisirsLoisirsBundle:Theme:ModifierTheme }
+_afficheclient_theme:
+    path:     /AffichageTheme
+    defaults: { _controller: LoisirsLoisirsBundle:Theme:AfficheClientTheme }
+
+_ajout_quiz:
+    path:     /AjoutQuiz
+    defaults: { _controller: LoisirsLoisirsBundle:Quiz:AjoutQuiz }
+
+_affiche_quiz:
+    path:     /AfficheQuiz
+    defaults: { _controller: LoisirsLoisirsBundle:Quiz:AfficheQuiz }
+_supp_quiz:
+    path:     /SuppQuiz/{id}
+    defaults: { _controller: LoisirsLoisirsBundle:Quiz:SupprimerQuiz }
+
+_modif_quiz:
+    path:     /ModifQuiz/{id}
+    defaults: { _controller: LoisirsLoisirsBundle:Quiz:ModifierQuiz }
+_afficheclient_quiz:
+    path:     /AffichageQuiz/{id}
+    defaults: { _controller: LoisirsLoisirsBundle:Quiz:AfficheClientQuiz }
+

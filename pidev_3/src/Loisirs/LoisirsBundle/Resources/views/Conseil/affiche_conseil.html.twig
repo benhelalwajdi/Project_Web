@@ -1,0 +1,62 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+
+<html>
+<head>
+
+
+    <title>Liste des Conseils</title>
+</head>
+<body>
+<div class="main-panel">
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header" data-background-color="purple">
+                            <h4 class="title">Espace Administration des conseils</h4>
+                            <p class="category">Liste des Conseils</p>
+                        </div>
+                        <div class="card-content table-responsive">
+                            <table class="table">
+                                <thead class="text-primary">
+                                <th>Id</th>
+                                <th>Titre</th>
+                                <th>Contenu</th>
+                                <th>Date</th>
+                                <th>Suppression</th>
+                                <th>Modification</th>
+                                </thead>
+        {% for m in conseil  %}
+            <tbody>
+            <tr>
+                <td>{{ m.Id }}</td>
+                <td>{{ m.Titre }}</td>
+                <td>{{ m.contenu }}</td>
+                <td>{{ m.Date|date("Y-m-d") }}</td>
+                <td><a href="{{ path('_supp_conseil',{'id':m.Id}) }}">delete here</a> </td>
+                <td><a href="{{ path('_modif_conseil',{'id':m.Id}) }}">update here</a> </td>
+
+            </tr>
+            </tbody>
+        {% endfor %}
+    </table>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+</body>
+</html>
+{% endblock %}

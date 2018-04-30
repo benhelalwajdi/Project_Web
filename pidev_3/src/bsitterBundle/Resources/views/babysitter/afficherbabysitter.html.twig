@@ -1,0 +1,102 @@
+{% extends 'template.html.twig' %}
+{% block body %}
+    <link rel="script" href="{{ asset('jqueryapimaps.min.js') }}">
+    <link rel="script" href="{{ asset('gmaps/gmaps.js') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('examples.css') }}" />
+
+    <div class="row">
+        <div class="span11">
+            <div id="map"></div>
+
+            <script>
+                var map;
+                var markers = [];
+                var marker;
+                function initMap() {
+                    if (navigator.geolocation) { //Checks if browser supports geolocation
+                        navigator.geolocation.getCurrentPosition(function (position) {                                                              //This gets thevar latitude = position.coords.latitude;                    //users current
+                        var longitude = position.coords.longitude;
+                        var latitude = position.coords.latitude;
+                        var coords = new google.maps.LatLng(latitude, longitude); //Creates variable for map coordinates
+                        var directionsService ;
+                        var directionsDisplay ;
+                        var b =true ;
+                        var mapOptions = //Sets map options
+                            {
+                                zoom: 15,  //Sets zoom level (0-21)
+                                center: coords, //zoom in on users location
+                                mapTypeControl: true, //allows you to select map type eg. map or satellite
+                                navigationControlOptions:
+                                    {
+                                        style: google.maps.NavigationControlStyle.SMALL //sets map controls size eg. zoom
+                                    },
+                                mapTypeId: google.maps.MapTypeId.ROADMAP //sets type of map Options:ROADMAP, SATELLITE, HYBRID, TERRIAN
+                            };
+                        map = new google.maps.Map(document.getElementById("map"), mapOptions);
+                            marker = new google.maps.Marker({
+                               position: coords,
+                               map: map,
+                               title : "thats me"
+                            });
+                        {% for m in bs %}
+                            marker = new google.maps.Marker({
+                                position: {lat: parseFloat({{ m.lat }}), lng: parseFloat({{ m.lag }})},
+                                map: map,
+                                title: "Drag me!"
+                            });
+                            var content = "adresse email : {{ m.email }} </br>" + "" +
+                                "nom : {{ m.nom }}" + "</br>" +
+                                "prenom : {{ m.prenom }}"+
+                                "{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}" +
+                                "<a href='consulter{{ m.Id }}'>consulter</a>" +
+                                "{% else %}" + "" +
+                                "<a href='/#loginModal'>consulter</a>"
+                            +"{% endif %} ";
+                            var infowindow = new google.maps.InfoWindow();
+                            google.maps.event.addListener(marker, 'click',
+                                (function (marker, content, infowindow) {
+                                    return function () {
+                                        infowindow.setContent(content);
+                                        infowindow.open(map, marker);
+                                    };
+                                })(marker, content, infowindow));
+                            markers.push(marker);
+                            google.maps.event.addListener( marker, 'click', function(e){
+
+                                if (!b) {
+                                    directionsDisplay.setMap(null);
+                                }
+                                directionsService = new google.maps.DirectionsService();
+                                directionsDisplay = new google.maps.DirectionsRenderer();
+                                directionsDisplay.setMap(map);
+                                directionsDisplay.setPanel(document.getElementById('map'));
+                                var request = {
+                                    origin: coords,
+                                    destination: {lat: this.position.lat(), lng: this.position.lng()},
+                                    travelMode: google.maps.DirectionsTravelMode.DRIVING,
+                                };
+
+                                directionsService.route(request, function (response, status) {
+                                    if (status == google.maps.DirectionsStatus.OK) {
+                                        directionsDisplay.setDirections(response);
+                                    }
+                                });
+                                b = false ;
+                            });
+                            {% endfor %}
+
+
+                            /*map.addListener('click', function(event) {
+                                addMarker(event.latLng);
+
+                            });*/
+                        });
+                }
+                }
+
+            </script>
+            <script async defer src="{{ asset('https://maps.googleapis.com/maps/api/js?key=AIzaSyAuFusBAC3vYNl0ye8bXOk0nGhGUo109qE&callback=initMap') }}">
+            </script>
+        </div>
+    </div>
+{% endblock %}

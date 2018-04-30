@@ -1,0 +1,78 @@
+{% extends 'template.html.twig' %}
+{% block body %}
+
+
+
+    {% block stylesheets %}
+        <link href="{{ asset('Public/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" media="all"/>
+        <link href="{{ asset('Public/css/style.css') }}" rel="stylesheet" type="text/css" media="all"/>
+        <link href="{{ asset('Public/css/ionicons.min.css') }}" rel="stylesheet" type="text/css" media="all"/>
+        <link href="{{ asset('Public/css/style.css') }}" rel="stylesheet" type="text/css" media="all"/>
+        <link href="{{ asset('Public/css/font-awesome.min.css') }} " rel="stylesheet" type="text/css" media="all"/>
+
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,600,600italic,700' rel='stylesheet' type='text/css'>
+
+    {% endblock %}
+    <div id="page-contents">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 static">
+
+                <ul class="nav-news-feed">
+                    <a href="{{ path('liste_abonnee') }}">
+                        <li><i class="icon ion-android-person-add" ></i>
+                            <div><b>Abonné(e)s</b></div>
+                        </li>
+                    </a>
+                    <a href="{{ path('liste_abonnement') }}">
+                        <li><i class="icon ion-android-person"></i>
+                            <div>Suivis</div>
+                        </li>
+                    </a>
+
+                </ul>
+            </div>
+            <div class="col-md-7">
+                {% if usr|length < 1 %}
+
+                <div class="people-nearby">
+                    <div class="nearby-user">
+                        <div class="row">
+                            <h1>Aucun Abonné(e)</h1>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+            </div>
+            <div class="col-md-7">
+                <h1>Abonné(e)s</h1>
+                <h4>{{ usr|length }} abonnés</h4>
+                <h4>Les personnes qui te suivent.</h4>
+
+                <div class="people-nearby">
+                    {% for m in usr %}
+                        <div class="nearby-user">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2">
+                                    <img src="{{ asset(vich_uploader_asset(m, 'imageFile')) }}" alt="user"
+                                         class="profile-photo-lg"/>
+                                </div>
+                                <div class="col-md-7 col-sm-7">
+                                    <h5><a href="{{ path('consulterbs', {'id': m.id}) }}" class="profile-link"> {{ m.prenom }} {{ m.nom }} </a></h5>
+                                    <p>{{ m.username }}</p>
+                                    <p class="text-muted">{{ m.email }}</p>
+                                </div>
+                                <div class="col-md-3 col-sm-3">
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+
+<html>
+<head>
+    <title>Liste des Quizs</title>
+</head>
+<body>
+<div class="main-panel">
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header" data-background-color="purple">
+                            <h4 class="title">Espace Administration des loisirs</h4>
+                            <p class="category">Liste des Quizs</p>
+                        </div>
+                        <div class="card-content table-responsive">
+                            <table class="table">
+                                <thead class="text-primary">
+                                <th>Id</th>
+                                <th>Theme</th>
+                                <th>Question</th>
+                                <th>Proposition 1</th>
+                                <th>Proposition 2</th>
+                                <th>Proposition 3</th>
+                                <th>Reponse</th>
+
+                                <th>Suppression</th>
+                                <th>Modification</th>
+                                </thead>  {% for m in quiz  %}
+            <tbody>
+            <tr>
+                <td>{{ m.Id }}</td>
+                <td>{{ m.theme.nom}}</td>
+                <td>{{ m.question }}</td>
+                <td>{{ m.prop1 }}</td>
+                <td>{{ m.prop2 }}</td>
+                <td>{{ m.prop3 }}</td>
+                <td>{{ m.reponse }}</td>
+
+                <td><a href="{{ path('_supp_quiz',{'id':m.Id}) }}">delete here</a> </td>
+                <td><a href="{{ path('_modif_quiz',{'id':m.Id}) }}">update here</a> </td>
+
+            </tr>
+            </tbody>
+        {% endfor %}
+    </table>
+</div>
+
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+
+</div>
+
+</body>
+</html>
+{% endblock %}

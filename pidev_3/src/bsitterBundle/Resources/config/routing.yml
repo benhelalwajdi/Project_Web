@@ -1,0 +1,57 @@
+bsitter_homepage:
+    path:     /
+    defaults: { _controller: bsitterBundle:Default:index }
+
+
+bsitter_mdonne:
+    path:     /mod_d
+    defaults: { _controller: bsitterBundle:Default:modifierdonne }
+
+AfficheBs:
+    path:     /afficheBs
+    defaults:  { _controller: bsitterBundle:bs:AfficheBs }
+
+consulterbs:
+    path:     /consulter{id}
+    defaults : { _controller: bsitterBundle:bs:compte }
+
+user_find:
+    path:     /rech
+    defaults : { _controller: bsitterBundle:bs:FindusrAdmin }
+
+cv:
+    path:     /cvBaby
+    defaults : { _controller: bsitterBundle:bs:setCV }
+
+img:
+    path:     /imgBaby
+    defaults : { _controller: bsitterBundle:Default:setImage }
+
+liste_abonnee:
+      path:     /listeabonnee
+      defaults: { _controller: bsitterBundle:Abonnements:listeAbonnee}
+liste_abonnement:
+      path:     /listeabonnement
+      defaults: { _controller: bsitterBundle:Abonnements:listeAbonnement}
+sabonner:
+      path:     /sabonner/{id}
+      defaults: { _controller: bsitterBundle:Abonnements:abonner}
+desabonner:
+      path:     /desabonner/{id}
+      defaults: { _controller: bsitterBundle:Abonnements:desabonner}
+
+AjoutBesoin:
+      path:     /Ajout/{id}
+      defaults: { _controller: bsitterBundle:besoin:ajouter}
+
+AfficheBesoin:
+      path:     /Affiche
+      defaults: { _controller: bsitterBundle:besoin:affiche}
+
+ModifierBesoin:
+      path:     /modBesoin/{id}
+      defaults: { _controller: bsitterBundle:besoin:modifier}
+
+AffichePBesoin:
+      path:     /Affichebp
+      defaults: { _controller: bsitterBundle:besoin:affichep}

@@ -1,0 +1,16 @@
+{% extends 'template.html.twig' %}
+
+{% block body %}
+    <h1>Modifier un Besoin</h1>
+    {{ form_start(f) }}
+    <table border="0px" class="table" >
+        <tr >
+            <td>Description</td>
+            <td>{{ form_widget(f.descriptionDuBesoin) }}</td>
+        </tr>
+    </table>
+
+    {{ form_widget(f.modifier) }}
+    {{ form_end(f) }}
+
+{% endblock %}

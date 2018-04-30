@@ -1,0 +1,38 @@
+{% extends 'template.html.twig' %}
+{% block body %}
+    <div class="container">
+        <br><br><br>
+        <div id="page-contents">
+            <center>
+                <h3>
+                    Upload CV
+                </h3>
+                <a href=" {{ asset(vich_uploader_asset(us, 'cvFile')) }}">
+                    <button class="btn-primary pull-right "><i class="ion-ios-cloud-download"></i>&nbsp;Télécharger
+                        le CV
+                    </button>
+                </a>
+ {{ form_start(f) }}
+        <br>
+                <h5>Upload votre CV</h5>
+                {{ form_widget(f.cvFile) }}
+                <br>
+                {{ form_widget(f.recaptcha) }}
+                <button class="btn-primary" onClick="cvConfirm()">Upload &nbsp;<i class="ion-arrow-right-a"></i></button>
+                {{ form_end(f) }}
+
+            </center>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+    <script>
+        function cvConfirm() {
+            swal("CV Envoyé", "Votre CV a été enregistrer", "success");
+        }
+
+
+    </script>
+{% endblock %}

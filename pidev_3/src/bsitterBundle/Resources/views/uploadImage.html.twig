@@ -1,0 +1,38 @@
+{% extends 'template.html.twig' %}
+{% block body %}
+    <div class="container">
+        <br><br><br>
+        <div id="page-contents">
+            <center>
+                <h3>
+                    Upload image
+                </h3>
+                <img src="{{ asset(vich_uploader_asset(us, 'imageFile')) }}" alt="" class="img-responsive profile-photo"/>
+
+
+                {{ form_start(f) }}
+                <br>
+                <h5>Upload votre image</h5>
+                {{ form_widget(f.imageFile) }}
+                <br>
+                {{ form_widget(f.recaptcha) }}
+                <button class="btn-primary" onClick="imageConfirm()">Upload &nbsp;<i class="ion-arrow-right-a"></i></button>
+                {{ form_end(f) }}
+
+            </center>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+    <script>
+        function imageConfirm() {
+            swal("image Envoyé", "Votre image a été enregistrer", "success");
+        }
+
+
+    </script>
+
+{% endblock %}
+

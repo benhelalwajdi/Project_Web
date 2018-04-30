@@ -1,0 +1,128 @@
+{% extends 'template.html.twig' %}
+{% block body %}
+
+
+
+    {% block stylesheets %}
+        <link href="{{ asset('Public/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" media="all"/>
+        <link href="{{ asset('Public/css/style.css') }}" rel="stylesheet" type="text/css" media="all"/>
+        <link href="{{ asset('Public/css/ionicons.min.css') }}" rel="stylesheet" type="text/css" media="all"/>
+        <link href="{{ asset('Public/css/style.css') }}" rel="stylesheet" type="text/css" media="all"/>
+        <link href="{{ asset('Public/css/font-awesome.min.css') }} " rel="stylesheet" type="text/css" media="all"/>
+
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,600,600italic,700' rel='stylesheet' type='text/css'>
+
+    {% endblock %}
+    {% block js %}
+        <script src="{{ asset('Public/js/jquery-3.1.1.min.js') }}"></script>
+        <script src="{{ asset('Public/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('Public/js/jquery.appear.min.js') }}"></script>
+        <script src="{{ asset('Public/js/jquery.incremental-counter.js') }}"></script>
+        <script src="{{ asset('Public/js/script.js') }}"></script>
+        <script src="{{ asset('Public/css/jquery.scrollbar.css') }}"></script>
+        <script src="{{ asset('Public/js/jquery.sticky-kit.min.js') }}"></script>
+
+        <script src="{{ asset('//tristanedwards.me/u/SweetAlert//lib/sweet-alert.js') }}"></script>
+        <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+        <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+
+        <script>
+            function bookConfirm(id) {
+
+                sweetAlert({
+                    title: "Êtes-vous sûr ?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Oui",
+                    cancelButtonText:"Annuler ",
+                    closeOnConfirm: false
+                },function(){
+                    swal("Désabonné", "Cette personne ne vous ennuiera plus avec ses posts interminables.", "success");
+                    path="{{ path('desabonner',{'id':'id_user'}) }}";
+                    url = path.replace("id_user", id);
+                    location.href = url;
+
+                });
+
+
+            }
+
+
+        </script>
+    {% endblock %}
+<div id="page-contents">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 static">
+
+                <ul class="nav-news-feed">
+                    <a href="{{ path('liste_abonnee') }}">
+                        <li><i class="icon ion-android-person-add"></i>
+                            <div>Abonné(e)s</div>
+                        </li>
+                    </a>
+                    <a href="{{ path('liste_abonnement') }}">
+                        <li><i class="icon ion-android-person "></i>
+                            <div><b>Suivis</b></div>
+                        </li>
+                    </a>
+
+                </ul>
+            </div>
+            <!-- Newsfeed Common Side Bar Left
+            ================================================= -->
+
+            <div class="col-md-7">
+                {% if usr|length < 1 %}
+
+                <div class="people-nearby">
+                    <div class="nearby-user">
+                        <div class="row">
+                            <h1>Aucun Abonnement</h1>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+            </div>
+            <h1>Suivis</h1>
+
+            <h4>{{ usr|length }} suivis</h4>
+            <h4>Les personnes que tu suis.</h4>
+
+            <div class="col-md-7">
+                {% for m in usr %}
+
+                    <div class="people-nearby">
+
+                        <div class="nearby-user">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2">
+
+                                 </div>
+                                <div class="col-md-7 col-sm-7">
+                                    <h5><a href="{{ path('consulterbs', {'id': m.id}) }}"
+                                           class="profile-link">{{ m.prenom }} {{ m.nom }} </a></h5>
+                                    <p>{{ m.username }}</p>
+                                    <p class="text-muted">{{ m.email }}</p>
+                                </div>
+                                <div class="col-md-3 col-sm-3">
+                                    <button onClick="bookConfirm('{{m.id}}')" class="desabonner btn btn-danger pull-right">Désabonner</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}
+

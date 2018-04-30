@@ -1,0 +1,62 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+
+<html>
+<head>
+    <title>Liste des Blagues</title>
+</head>
+<body>
+<div class="main-panel">
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header" data-background-color="purple">
+                            <h4 class="title">Espace Administration des loisirs</h4>
+                            <p class="category">Liste des Blagues</p>
+                        </div>
+                        <div class="card-content table-responsive">
+                            <table class="table">
+                                <thead class="text-primary">
+                                <th>Id</th>
+                                <th>Titre</th>
+                                <th>Description</th>
+                                <th>Date</th>
+                                <th>Suppression</th>
+                                <th>Modification</th>
+                                  </thead>
+                                {% for m in blague  %}
+                                <tbody>
+                                <tr>
+                                    <td>{{ m.Id }}</td>
+                                    <td>{{ m.Titre }}</td>
+                                    <td>{{ m.Description }}</td>
+                                    <td>{{ m.Date|date("Y-m-d") }}</td>
+                                    <td><a href="{{ path('_supp_blague',{'id':m.Id}) }}">delete here</a> </td>
+                                    <td><a href="{{ path('_modif_blague',{'id':m.Id}) }}">update here</a> </td>
+
+                                </tr>
+                                </tbody>
+                                {% endfor %}
+                            </table>
+                            <p class="category"><a href="{{ path('_recherche_blague')}}">Rechercher des blagues</a></p>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+</div>
+
+</body>
+</html>
+{% endblock %}

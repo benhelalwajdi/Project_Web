@@ -1,0 +1,16 @@
+contacts_homepage:
+    path:     /messengerindex
+    defaults: { _controller: ContactsBundle:Messaging:inbox }
+send:
+     path:     /new_message/{id}
+     defaults: { _controller: ContactsBundle:Messaging:send}
+inbox:
+     path:     /inbox
+     defaults: { _controller: ContactsBundle:Messaging:inbox}
+discussion:
+     path:     /discussion/{id}
+     defaults: { _controller: ContactsBundle:Messaging:thread}
+mymessages:
+      path:     /messages
+      defaults: { _controller: ContactsBundle:Messaging:inbox}
+

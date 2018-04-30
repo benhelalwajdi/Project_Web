@@ -1,0 +1,65 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+<html>
+<head>
+
+    <title>Liste des Themes</title>
+</head>
+<body>
+<div class="main-panel">
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header" data-background-color="purple">
+                            <h4 class="title">Espace Administration des loisirs</h4>
+                            <p class="category">Liste des Themes</p>
+                        </div>
+                        <div class="card-content table-responsive">
+                            <table class="table">
+                                <thead class="text-primary">
+                                <th>Id</th>
+                                <th>Nom</th>
+                                <th>Niveau</th>
+                                <th>Image</th>
+                                <th>Suppression</th>
+                                <th>Modification</th>
+                                </thead>
+
+                                {% for m in theme  %}
+            <tbody>
+            <tr>
+                <td>{{ m.Id }}</td>
+                <td>{{ m.Nom }}</td>
+                <td>{{ m.niveau }}</td>
+
+
+                <td><img src="{{ asset('uploads/images/' ~ m.nomImage) }}" alt='image' class='img-rounded'></td>
+
+                <td><a href="{{ path('_supp_theme',{'id':m.Id}) }}">delete here</a> </td>
+                <td><a href="{{ path('_modif_theme',{'id':m.Id}) }}">update here</a> </td>
+
+            </tr>
+            </tbody>
+        {% endfor %}
+    </table>
+</div>
+
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+
+</div>
+
+</body>
+</html>
+{% endblock %}

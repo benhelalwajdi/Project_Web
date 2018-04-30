@@ -1,0 +1,14 @@
+{% extends 'template.html.twig' %}
+{% block body %}
+<table border="0px" class="table" >
+    <tr><td>Id</td><td>Desciption</td><td></td><td></td><td>nom du parent </td><td> Modifer le besoin </td></tr>
+    {% for m in besoin  %}
+        <tr>
+            <td>{{ m.Id }}</td>
+            <td>{{ m.descriptionDuBesoin }}</td><td></td><td></td>
+            <td>{{ m.idbs }}</td>
+            <td><a href="{{ path('ModifierBesoin',{'id':m.Id}) }}">Modifer</a> </td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

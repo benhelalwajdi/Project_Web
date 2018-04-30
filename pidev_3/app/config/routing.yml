@@ -1,0 +1,68 @@
+my_app_mail:
+    resource: "@MyAppMailBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+enseignant_enseignant:
+    resource: "@EnseignantEnseignantBundle/Resources/config/routing.yml"
+    prefix:   /enseignant
+
+loisirs_loisirs:
+    resource: "@LoisirsLoisirsBundle/Resources/config/routing.yml"
+    prefix:   /loisir
+
+jardin_denfant_evenement:
+    resource: "@JardinDenfantEvenementBundle/Resources/config/routing.yml"
+    prefix:   /jardin
+
+jardin_denfant_profil_jd:
+    resource: "@JardinDenfantProfilJDBundle/Resources/config/routing.yml"
+    prefix:   /jardin
+
+home:
+    resource: "@SantearticleBundle/Resources/config/routing.yml"
+    prefix:   /home
+
+santearticle:
+    resource: "@SantearticleBundle/Resources/config/routing.yml"
+    prefix:   /sante
+
+sante_specialiste:
+    resource: "@SanteSpecialisteBundle/Resources/config/routing.yml"
+    prefix:   /sante
+
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+boutique:
+    resource: "@BoutiqueBundle/Resources/config/routing.yml"
+    prefix:   /boutique
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+bsitter:
+    resource: "@bsitterBundle/Resources/config/routing.yml"
+    prefix:   /baby_sitter
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+contact:
+    resource: "@ContactsBundle/Resources/config/routing.yml"
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+EndroidQrCodeBundle:
+    resource: "@EndroidQrCodeBundle/Resources/config/routing.yml"
+    prefix:   /qrcode
+
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+discutea_forum:
+    resource: "@DForumBundle/Resources/config/routing.yml"
+    prefix:   /

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/pidev_3/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/pidev_3/tests" isTestSource="true" packagePrefix="Tests\" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/ancarebeca/full-calendar-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/bacon/bacon-qr-code" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/behat/transliterator" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/blackknight467/star-rating-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/cmen/google-charts-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/discutea/forum-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/doctrine/annotations" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/doctrine/collections" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/doctrine/common" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/doctrine/doctrine-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/doctrine/doctrine-cache-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/doctrine/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/doctrine/orm" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/egeloen/ckeditor-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/egeloen/json-builder" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/endroid/qr-code" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/fig/link-util" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/friendsofsymfony/jsrouting-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/friendsofsymfony/message-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/friendsofsymfony/user-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/gedmo/doctrine-extensions" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/incenteev/composer-parameter-handler" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/jdorn/sql-formatter" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/jms/metadata" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/khanamiryan/qrcode-detector-decoder" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/knplabs/knp-components" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/knplabs/knp-paginator-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/knplabs/knp-snappy" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/knplabs/knp-snappy-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/monolog/monolog" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/myclabs/php-enum" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/nomaya/social-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/paragonie/random_compat" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/psr/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/psr/link" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/sensio/distribution-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/sensio/framework-extra-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/sensio/generator-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/sensiolabs/security-checker" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/stof/doctrine-extensions-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/swiftmailer/swiftmailer" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/symfony/monolog-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/symfony/phpunit-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/symfony/polyfill-apcu" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/symfony/polyfill-intl-icu" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/symfony/polyfill-php56" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/symfony/polyfill-php70" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/symfony/polyfill-util" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/symfony/swiftmailer-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/symfony/symfony" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/twig/twig" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/twilio/sdk" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/vich/uploader-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/vihuvac/recaptcha-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/vresh/twilio-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/pidev_3/vendor/willdurand/jsonp-callback-validator" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
